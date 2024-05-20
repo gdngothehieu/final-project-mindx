@@ -1,0 +1,87 @@
+
+.card {
+    width: 800px;
+    height: 400px;
+    border-radius: 2%;
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.traveloka-input-design{
+    background-color: rgb(106, 165, 241);
+    border-radius: 4%;
+    padding: 20px;
+    
+}
+.filter-card{
+    width: 200px;
+    height: 400px;
+    border: 1px solid black;
+}
+#search-section {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.products{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+#search-title {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.checked {
+    color: yellow;
+}
+.card-section{
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.title-review {
+    display: flex;
+    flex-flow: row wrap;
+    align-items:center;
+}
+#search-input {
+    width: 500px;
+}
+.button-pointer {
+    cursor: pointer
+}
+.container {
+    margin-left: 100px;
+}
+
+input {
+    height: 50px;
+    border-radius: 5%;
+    margin-right: 10px;
+}
+
+.find-button {
+    width: 100px;
+    height: 60px;
+    cursor: pointer
+
+}
+
+.calendar {
+    width: 300px;
+}
+.price{
+    padding-top: 50px;
+    padding-left: 40px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 2%;
+
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
