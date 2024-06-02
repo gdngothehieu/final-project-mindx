@@ -1,0 +1,52 @@
+.traveloka-partner-design{
+    /* background-color: rgb(106, 165, 241); */
+    background-image: url("./images/traveloka-partner.png");
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4%;
+    padding-top: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;  
+    opacity: calc(90%);
+    color: black
+
+    /* background-repeat: no-repeat; */
+}
+
+.region{
+    width: 40%;
+}
+
+.partner-card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20% !important;
+    display:inline-block;
+    margin: 25px;
+  }
+  .partner-card img {
+    width: 100% !important;
+    height: 150px;
+  }
+  /* On mouse-over, add a deeper shadow */
+  .partner-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .partner-container {
+    padding: 2px 16px;
+  }
+  
+  .flex-partner-corp {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    
+  }

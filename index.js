@@ -1,86 +1,93 @@
 import{mindXHotel,cities} from './constant.js'
 const paginator = 2;
+let page = 1;
+
 const findHotel = () => {
     let searchCity = document.getElementById("search-input").value;
     let filterMindXHotel = []
     document.getElementById("card-list").innerHTML = ``;
-    const validateDate = () => {
-        
-        let checkinDate = document.getElementById("check-in").value;
-        let checkoutDate = document.getElementById("check-out").value;
-        console.log(Date.parse(checkinDate),Date.parse(checkoutDate));
-        if(Date.parse(checkinDate) > Date.parse(checkoutDate)){
-            alert("Checkout date must be larger than check in")
-        }
-    } 
-    validateDate();
-    for(const hotel of mindXHotel){
+    let checkinDate = document.getElementById("check-in").value;
+    if(!checkinDate){
+        document.getElementById("check-in").style.border = "3px solid red";
+        return;
+    }
+    
+  
+    document.getElementById("check-in").style.border = "3px solid green";
+
+    for(let i = 0 ; i < mindXHotel.length ; i++){
+        let hotel = mindXHotel[i];
         let location = hotel.location;
-        if(location.toLowerCase() === searchCity.toLowerCase()){
+
+        if(location.toLowerCase() === searchCity.toLowerCase() 
+        && new Date(checkinDate).getTime() >     new Date(hotel.availability).getTime() 
+    ){
              filterMindXHotel.push(hotel);
-            document.getElementById("card-list").innerHTML += addHTML(hotel.title,hotel.location,hotel.facilities,hotel.review,hotel.availability,hotel.price)
-
-
-
+            document.getElementById("card-list").innerHTML += addHTML(i,hotel.address,hotel.title,hotel.location,hotel.facilities,hotel.review,hotel.availability,hotel.price)
         }
-
-
     }
-    if(!filterMindXHotel.length){
-        showHotels();
-    }
+    // if(!filterMindXHotel.length){
+    //     showHotels();
+    // }
 }
 
 const bookRoom = () => {
     alert("abc")
 }
 
-const login = () => {
-    let username = document.getElementById("email-form").value;
-    let password = document.getElementById("password-form").value;
-    alert(username)
-    alert(password)
-}
-const addHTML = (i,title,location,facilities, review,availability, price) => {
+
+
+
+const addHTML = (i,address,title,location,facilities, review,availability, price) => {
+    let booking = {i,address,title,location,facilities, review,availability, price};
+   
     const hotelCard =  `  
         
     <div class="card-section m-2">
-
+ 
     <div style="width:300px;">
     </div>
     <div class="card-section button-pointer">
 
         <div class="card">
             <div class="title-review">
-                <div style="width: 15%;">
+                <div style="width: 200px;height:200px;">
                     
-                <img src="" alt=""/>
-                <img src="" alt=""/>
-                <img src="" alt=""/>
-                <img src="" alt=""/>
+                <img src="./images/mindx.jpg" style="width:150px;height:125px" alt=""/>
+                
+                <img src="./images/mindx.jpg" style="width:50px;height:50px;margin-left: 15px" alt=""/>
+
+                <img src="./images/mindx.jpg" style="width:50px;height:50px"  alt=""/>
+                
                     
                 </div>
                 <div>
-                <div style="width: 400px;">
+                <div style="width: 300px;">
                     <h5>${title}</h5>
-                    <p>${location}</p>
-                    <div>
-                        ${facilities}
-                    </div>
-                    <div>Available: ${availability} </div>
+                    <p><b>Thành phố: </b> ${location}</p>
+                    <p><b>Địa chỉ: </b> ${address}</p>
+                    <div id="facilities-list">
+                        ${(function facile(){
+                            let facilitiesList =``;
+                            for(let i = 0 ; i < facilities.length; i++){
+                                 facilitiesList +=`<div class="facilities">${facilities[i]} </div> `
+
+                            }
+                            return facilitiesList;
+                        })()}
+                        </div>
+                    <div><b>Có phòng ngày:</b> ${availability} </div>
                 </div>
-                <div style="width: 20%;">
-                    <p>${review}</p>
+                <div style="width: 100px;">
+                    <p><b>Đánh giá: </b>${review}</p>
                 </div>
                 
             </div>
             
     <div class="price">
-    <p>Price: ${price} VND</p>
+    <p>Giá: ${price} VND / đêm</p>
     <div id="book-room">
-    <button  class="btn btn-danger" onclick="{
-        alert(${i});
-}" >Đặt phòng</button>
+    <button  class="btn btn-danger" onclick="abc()" >Đặt phòng</button>
     </div>
 
 </div>
@@ -90,36 +97,84 @@ const addHTML = (i,title,location,facilities, review,availability, price) => {
         
     </div>
     </div>`
-    // const filterCard =    `      <div class="filter-card">
-    //                 <h4> Popular filter for </h4>
-    //                 <span class="fa fa-star checked"></span>
-    //                 <span class="fa fa-star checked"></span>
-    //                 <span class="fa fa-star checked"></span>
-    //                 <span class="fa fa-star"></span>
-    //                 <span class="fa fa-star"></span>
-    //             </div>`
-    if(i===0){
-        // return filterCard + hotelCard
-        return hotelCard;
+    window.abc = () => {
 
-    } else {
+        localStorage.setItem("bookings", JSON.stringify(booking));
+        };
         return hotelCard;
-    }
             
 }
 
 
-const filterHotel = {
-
+const loading = ()=>{
+    localStorage.getItem("user")
+        page = Math.floor(mindXHotel.length/paginator);
+    
 }
 
+const logout = () => {
+    localStorage.removeItem("user");
+    document.getElementById("my-booking-tag").style.display = `none`;
+    reload();
+}
 const showHotels = () => {
     for(let i = 0 ; i < mindXHotel.length; i++){
         let hotel = mindXHotel[i];
-        document.getElementById("card-list").innerHTML += addHTML(i,hotel.title,hotel.location,hotel.facilities,hotel.review,hotel.availability,hotel.price);
+        document.getElementById("card-list").innerHTML += addHTML(i,hotel.address,hotel.title,hotel.location,hotel.facilities,hotel.review,hotel.availability,hotel.price);
     }
 }
-showHotels();
+// showHotels();
+loading();
+const login = () => {
+    let username = document.getElementById("email-form").value;
+    let password = document.getElementById("password-form").value;
+    if(!username || !password){
+        if(!username){
+            let username = document.getElementById("email-form").style.borderColor = "red";
+        }
+        if(!password){
+            let password = document.getElementById("password-form").style.borderColor = "red";
+        }
+        return;
+    }
+    document.getElementById("email-form").style.borderColor = "green";
 
-document.getElementById("find-hotel").addEventListener("click",findHotel);
+    document.getElementById("password-form").style.borderColor = "green";
+
+    localStorage.setItem("user", JSON.stringify({username, password}));
+    reload()
+}
+const addNights = () => {
+    let nights = document.getElementById("nights-count").value || 1;
+    let adults = document.getElementById("adults-count").value || 0;
+    let children = document.getElementById("children-count").value || 0 ;
+    localStorage.setItem("booking", JSON.stringify({nights, adults, children}) ) 
+}
+
+const reload= ()=>{
+
+    let validation = JSON.parse(localStorage.getItem("user") || null) ;
+    if(validation){
+        document.getElementById("login-button").style.display = "none"
+        // document.getElementById("sign-up-button").style.display = "none"
+        document.getElementById("left-top-bar").innerHTML += `<div>${validation.username}</div>`
+        document.getElementById("log-out-button").style.display = "flex"
+        document.getElementById("my-booking-tag").style.display = "flex"
+    } else {
+        document.getElementById("login-button").style.display = "flex"
+        // document.getElementById("sign-up-button").style.display = "flex"
+        document.getElementById("left-top-bar").innerHTML =``
+        document.getElementById("log-out-button").style.display = "none"
+
+
+    }
+}
+if(document.getElementById("find-hotel")){
+    document.getElementById("find-hotel").addEventListener("click",findHotel);  
+}
+
 document.getElementById("login-user").addEventListener("click",login);
+document.getElementById("login-user-modal").addEventListener("click",addNights);
+document.getElementById("log-out-button").addEventListener("click",logout);
+
+reload();

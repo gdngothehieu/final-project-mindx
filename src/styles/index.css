@@ -1,6 +1,6 @@
 
 .card {
-    width: 800px !important;
+    width: 800px;
     height: 400px;
     border-radius: 2%;
     padding: 0px;
@@ -12,24 +12,13 @@
     border-radius: 10%;
 }
 .traveloka-input-design{
-    /* background-color: rgb(106, 165, 241); */
-    background-image: url("./images/background.jpg");
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(106, 165, 241);
     border-radius: 4%;
-    padding-top: 200px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 50px;  
+    padding: 20px;
     
-    /* background-repeat: no-repeat; */
 }
 .filter-card{
-    width: 200px !important;
+    width: 200px;
     height: 400px;
     border: 1px solid black;
 }
@@ -39,7 +28,6 @@
     align-items: center;
 }
 .products{
-    margin-left: 25%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -53,9 +41,7 @@
     color: yellow;
 }
 .card-section{
-    width: 100% !important;
-    margin-left: 10%;
-
+    
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -98,6 +84,7 @@ input {
     padding-left: 40px;
     width: 200px;
     height: 200px;
+    border: 1px solid black;
     border-radius: 2%;
 
     margin-left: 5px;
@@ -120,62 +107,51 @@ input {
     flex-flow: row wrap;
     align-items: center;
 }
-
-.minus-plus {
-    width: 50px !important; 
-    height: 50px !important; 
-    text-align: center !important;
-    margin-right:5px !important;
-    margin-left: 1% !important;
+.left-card {
+    margin-top : 25px;
+    width: 300px;
+    height: 600px !important;
 }
 
-#login-button{
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-#log-out-button{
-    display:none;
-}
-
-#left-top-bar {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.footer-section_content{
+#booking-list-grid {
     display: flex;
-    margin-left: 10%;
+    flex-flow: row wrap;
+    align-items: center;
 }
 
-.footer-section_content_item{
-    color: #000;
-}
+.right-card{
+    width: 800px;
+    margin-top : 25px;
+    height: 600px !important;
 
-
-footer {
-    margin: 48px 0;
-}
-
-footer .footer-section {
-    margin: 36px 0;
 }
 
 
-
-footer .footer-section .footer-section {
-    padding-bottom: 12px;
-    color: rgb(143, 28, 28)
+.left-card p {
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
-footer a {
-    text-decoration: none;
+.right-card p {
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
-#my-booking-tag{
-    display: none;
-    margin-right: 16px;
-    margin-left: 16px;
+.booking-item{
+    width: 750px !important;
+    height: 200px !important;
+}
+
+.booking-item img {
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+.booking-item{
+    display: inline-flex;
+    flex-flow: row wrap;
 }
 
 .line {
@@ -184,25 +160,13 @@ footer a {
     align-items: center;
     padding-left: 10px;
 }
-#advertisement{
-    margin-top: 24px;
-    margin-bottom: 24px;
-}
-#sponsor {
-    margin-top: 20px;
-    margin-left: 35%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-}
+
 #sponsor img {
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 10%;
-    filter: grayscale(200%);
+    width: 75px;
+    height: 75px;
 }
 
 #advertisement{
-    margin-left: 10%;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
