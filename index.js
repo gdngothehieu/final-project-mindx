@@ -18,8 +18,10 @@ const findHotel = () => {
     for(let i = 0 ; i < mindXHotel.length ; i++){
         let hotel = mindXHotel[i];
         let location = hotel.location;
-
-        if(location.toLowerCase() === searchCity.toLowerCase() 
+        let patternHotelName = new RegExp(searchCity.replace(/\s/g, ''))
+        console.log(patternHotelName,location,  patternHotelName.test(location.toLowerCase().trim())      );
+        if(
+            patternHotelName.test(location.toLowerCase().trim())  
         && new Date(checkinDate).getTime() >     new Date(hotel.availability).getTime() 
     ){
              filterMindXHotel.push(hotel);
