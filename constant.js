@@ -18,7 +18,7 @@
     {   
         title: "MindX",
         address: "1 Trường Chinh",
-        location: "Hồ Chí Minh",
+        location: "Đà Nẵng",
         availability: "2024-2-10" ,
         facilities: ["Máy Lạnh","wifi","Bàn ủi"],
         review: 5,
@@ -49,7 +49,7 @@
     {
         title: "MindX Hotel",
         address: "3 P.Lương Yên",
-        location: "Hà Nội",
+        location: "Huế",
         ava: "2024-2-10" ,
         availability: "2024-2-10" ,
         facilities: ["Máy Lạnh","wifi","Bàn ủi"],

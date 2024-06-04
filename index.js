@@ -81,7 +81,7 @@ const addHTML = (i,address,title,location,facilities, review,availability, price
                     <div><b>Có phòng ngày:</b> ${availability} </div>
                 </div>
                 <div style="width: 100px;">
-                    <p><b>Đánh giá: </b>${review}</p>
+                    <p><b>Đánh giá: </b>${review } </p>
                 </div>
                 
             </div>
