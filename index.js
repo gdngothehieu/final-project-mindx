@@ -18,10 +18,10 @@ const findHotel = () => {
     for(let i = 0 ; i < mindXHotel.length ; i++){
         let hotel = mindXHotel[i];
         let location = hotel.location;
-        let patternHotelName = new RegExp(searchCity.replace(/\s/g, ''))
-        console.log(patternHotelName,location,  patternHotelName.test(location.toLowerCase().trim())      );
+        let patternHotelName = new RegExp(searchCity)
+        console.log(patternHotelName,location,  patternHotelName.test(location.toLowerCase())      );
         if(
-            patternHotelName.test(location.toLowerCase().trim())  
+            (patternHotelName.test(location.toLowerCase()) )
         && new Date(checkinDate).getTime() >     new Date(hotel.availability).getTime() 
     ){
              filterMindXHotel.push(hotel);
@@ -89,7 +89,7 @@ const addHTML = (i,address,title,location,facilities, review,availability, price
     <div class="price">
     <p>Giá: ${price} VND / đêm</p>
     <div id="book-room">
-    <button  class="btn btn-danger" onclick="abc()" >Đặt phòng</button>
+    <button  class="btn btn-primary" onclick="abc()" >Đặt phòng</button>
     </div>
 
 </div>
