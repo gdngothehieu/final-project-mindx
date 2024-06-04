@@ -16,7 +16,7 @@ const getBooking = () => {
     <p style="width: 25%;">
         <b>Tổng cộng:</b> ${Number(nights.nights || 1) * Number(nights.adults || 1) * Number(booking.price)} VND
     </p>
-    <button id="booking-${booking.i}" class="btn btn-danger" onclick="xoaBooking(${booking.i})" style="margin-top: 5%;">Xóa booking</button>
+    <button id="booking-${booking.i}" class="btn btn-danger" onclick="xoaBooking(${booking.i})" style="margin-top: 5%;"></button>
     `
     } else {
         document.getElementById("booking-list").innerHTML += "<div style='margin-left:20px;'><b>Bạn chưa có mã đặt phòng nào</b></div>";
