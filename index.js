@@ -1,11 +1,10 @@
 import{mindXHotel,cities} from './constant.js'
 const paginator = 2;
 let page = 1;
-
 const findHotel = () => {
     let searchCity = document.getElementById("search-input").value;
-    let filterMindXHotel = []
     document.getElementById("card-list").innerHTML = ``;
+    let filterMindXHotel = [];
     let checkinDate = document.getElementById("check-in").value;
     if(!checkinDate){
         document.getElementById("check-in").style.border = "3px solid red";
@@ -89,7 +88,7 @@ const addHTML = (i,address,title,location,facilities, review,availability, price
     <div class="price">
     <p>Giá: ${price} VND / đêm</p>
     <div id="book-room">
-    <button  class="btn btn-primary" onclick="abc()" >Đặt phòng</button>
+  ${        localStorage.getItem("user", JSON.stringify(booking))?  `<button  class="btn btn-primary" onclick="abc()" >Đặt phòng</button>` : ``}
     </div>
 
 </div>
@@ -117,6 +116,7 @@ const loading = ()=>{
 const logout = () => {
     localStorage.removeItem("user");
     document.getElementById("my-booking-tag").style.display = `none`;
+    document.getElementById("card-list").innerHTML = ``;
     reload();
 }
 const showHotels = () => {
@@ -130,6 +130,7 @@ loading();
 const login = () => {
     let username = document.getElementById("email-form").value;
     let password = document.getElementById("password-form").value;
+    document.getElementById("card-list").innerHTML = ``
     if(!username || !password){
         if(!username){
             let username = document.getElementById("email-form").style.borderColor = "red";
