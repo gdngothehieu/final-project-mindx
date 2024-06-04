@@ -20,7 +20,7 @@
         address: "1 Trường Chinh",
         location: "Hồ Chí Minh",
         availability: "2024-2-10" ,
-        facilities: ["air-condition","wifi","iron"],
+        facilities: ["Máy Lạnh","wifi","Bàn ủi"],
         review: 5,
         price: 600000
     },
@@ -33,14 +33,14 @@
         price: 600000,
         review: 5,
 
-        facilities: ["air-condition","wifi","iron"],
+        facilities: ["Máy Lạnh","wifi","Bàn ủi"],
     },
     {
         title: "MindX Hotel (Song Hành)",
         address: "2 Song Hành",
         location: "Hồ Chí Minh",
         availability: "2024-2-10" ,
-        facilities: ["air-condition","wifi","iron"],
+        facilities: ["Máy Lạnh","wifi","Bàn ủi"],
         price: 600000,
         review: 5,
 
@@ -52,7 +52,7 @@
         location: "Hà Nội",
         ava: "2024-2-10" ,
         availability: "2024-2-10" ,
-        facilities: ["air-condition","wifi","iron"],
+        facilities: ["Máy Lạnh","wifi","Bàn ủi"],
         price: 600000,
         review: 5,
 
@@ -65,7 +65,7 @@
         price: 600000,
         review: 5,
 
-        facilities: ["air-condition","wifi","iron"],
+        facilities: ["Máy Lạnh","wifi","Bàn ủi"],
     },
     {
         title: "MindX Hotel (Hoàng Đạo Thúy)",
@@ -73,7 +73,7 @@
         location: "Hà Nội",
         availability: "2024-2-10" ,
         price: 600000,
-        facilities: ["air-condition","wifi","iron"],
+        facilities: ["Máy Lạnh","wifi","Bàn ủi"],
         review: 5,
 
     },

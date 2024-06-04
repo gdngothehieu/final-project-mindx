@@ -100,7 +100,7 @@ const addHTML = (i,address,title,location,facilities, review,availability, price
     </div>
     </div>`
     window.abc = () => {
-
+        alert("Bạn đã đặt phòng thành công!")
         localStorage.setItem("bookings", JSON.stringify(booking));
         };
         return hotelCard;
