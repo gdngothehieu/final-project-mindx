@@ -147,6 +147,8 @@ const login = () => {
     localStorage.setItem("user", JSON.stringify({username, password}));
     reload()
 }
+
+
 const addNights = () => {
     let nights = document.getElementById("nights-count").value || 1;
     let adults = document.getElementById("adults-count").value || 0;
